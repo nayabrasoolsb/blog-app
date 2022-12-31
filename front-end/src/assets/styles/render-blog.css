@@ -1,0 +1,37 @@
+.blog-main {
+  display: flex;
+  min-width: 200px;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  border: 1px solid #cccc;
+  box-shadow: 3px 3px 8px #cccc;
+  height: 160px;
+}
+
+.blog-main>div {
+  padding: 4px 15px;
+}
+
+.blog-main img {
+  width: 100%;
+  height: auto;
+  max-width: 180px;
+}
+
+.blog-main .blog-title {
+  margin-bottom: 5px;
+  color: rgb(50, 121, 193);
+}
+
+.blog-main .blog-title h3 {
+  margin: 0;
+  text-transform: capitalize;
+}
+.blog-main .blog-title>.userName{
+  font-size: 13px;
+  /* text-transform: lowercase; */
+}
+.blog-main .blog-title>.userName>span{
+  text-transform: lowercase
+}

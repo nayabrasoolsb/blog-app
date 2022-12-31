@@ -1,0 +1,37 @@
+.create {
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  background-color: cadetblue;
+}
+
+h2 {
+  letter-spacing: 1.2px;
+  margin: 0;
+  margin-bottom: 7px;
+}
+
+.create>.content {
+  background-color: white;
+  padding: 15px 20px;
+}
+.create>.content input{
+  width: 95%;
+  height: 30px;
+  border: 2px solid cadetblue;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.create>.content button{
+  color: white;
+  width: 100%;
+  text-align: center;
+  height: 28px;
+  background-color: rgb(73, 186, 186);
+  border: 2px solid #cccc;
+  border-radius: 2px;
+}
+.create>.content button:hover{
+  background-color: rgb(85, 141, 141);
+  transition: 0.4s ease-in;
+}
