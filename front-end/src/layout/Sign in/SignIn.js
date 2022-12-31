@@ -24,7 +24,7 @@ export default function SignIn() {
       alert("please check the error");
       return;
     }
-    fetch("http://localhost:3004/api/v1/user/login", {
+    fetch("https://blogapp-by-nayabrasool.onrender.com/api/v1/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

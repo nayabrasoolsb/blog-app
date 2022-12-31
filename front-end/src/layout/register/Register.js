@@ -36,7 +36,7 @@ export default function Register() {
       }));
       return;
     }
-    fetch("http://localhost:3004/api/v1/user/register", {
+    fetch("https://blogapp-by-nayabrasool.onrender.com/api/v1/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

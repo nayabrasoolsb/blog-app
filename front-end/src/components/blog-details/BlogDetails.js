@@ -19,7 +19,7 @@ export default function BlogDetails() {
     }
   }, []);
   useEffect(() => {
-    fetch(`http://localhost:3004/api/v1/blogs/fetch/blog/${id}`, {
+    fetch(`https://blogapp-by-nayabrasool.onrender.com/api/v1/blogs/fetch/blog/${id}`, {
       method: "GET",
       headers: {
         authorization: localStorage.getItem("token"),

@@ -34,7 +34,7 @@ function CreateBlog() {
   }
   function submitHandler(e) {
     e.preventDefault();
-    fetch("http://localhost:3004/api/v1/blogs/upload", {
+    fetch("https://blogapp-by-nayabrasool.onrender.com/api/v1/blogs/upload", {
       method: "POST",
       headers: {
         authorization: localStorage.getItem("token"),

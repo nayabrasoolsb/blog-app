@@ -18,7 +18,7 @@ export default function Blogs() {
     }
   }, []);
   useEffect(() => {
-    fetch(`http://localhost:3004/api/v1/blogs/fetch/${pageNum ? pageNum : 1}`, {
+    fetch(`https://blogapp-by-nayabrasool.onrender.com/api/v1/blogs/fetch/${pageNum ? pageNum : 1}`, {
       method: "GET",
       headers: {
         authorization: localStorage.getItem("token"),
