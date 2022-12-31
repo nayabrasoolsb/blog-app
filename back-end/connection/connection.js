@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
-mongoose.connect("mongodb://localhost:27017/blogs1").then(() => {
+const dotenv = require("dotenv").config();
+
+mongoose.connect(process.env.MONGODB_URL).then(() => {
   console.log("connected to mongodb")
 }).catch((err) => {
   console.log(err)
