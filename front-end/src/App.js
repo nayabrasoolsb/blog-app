@@ -2,6 +2,7 @@ import "./App.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import BlogDetails from "./components/blog-details/BlogDetails";
 import Blogs from "./components/Blogs/Blogs";
 import CreateBlog from "./components/CreateBlog/CreateBlog";
 import Header from "./layout/header/Header";
@@ -21,8 +22,11 @@ function App() {
             <Route path="register" element={<Register />} />
           </Route>
           <Route path="/user" element={<UserHeader />}>
-            <Route index element={< Blogs/>} />
-            <Route path="blogs" element={<Blogs />} />
+            <Route index element={<Blogs />} />
+            <Route path="blogs" element={<Blogs />}>
+              <Route path=":pageNum" element={<Blogs />} />
+            </Route>
+            <Route path="blog/:id" element={<BlogDetails />} />
             <Route path="create" element={<CreateBlog />} />
           </Route>
           <Route path="*" element={<NoMatch />} />
