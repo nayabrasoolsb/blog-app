@@ -26,7 +26,7 @@
   color: black;
 }
 
-.header1>div:last-child {
+.header1 .log-out {
   background-color: cadetblue;
   color: white;
   text-align: center;
@@ -44,16 +44,26 @@
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.header1>.user-name>span{
-  text-transform:capitalize;
+
+.header1>.user-name>span {
+  text-transform: capitalize;
   font-weight: 600;
   font-size: 17px;
-  color:aliceblue
+  color: aliceblue
 }
-.create1, .home{
+
+.create1,
+.home {
   text-align: center;
 }
-.create1:hover, .home:hover{
+
+.create1:hover,
+.home:hover {
   background-color: rgb(226, 228, 231);
   transition: 0.7s ease-in;
+}
+
+.log-out:hover {
+  transition: 0.7s ease-in;
+  background-color: rgb(83, 130, 133);
 }
