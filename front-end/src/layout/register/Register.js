@@ -44,18 +44,18 @@ export default function Register() {
       body: JSON.stringify({
         email: userData.email,
         password: userData.password,
-        name: userData.name
+        name: userData.name,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "Failed") {
           alert("email already exists please try to login");
-        } else if(data.status === "success") {
+        } else if (data.status === "success") {
           alert("registration successful");
-          navigate("/sign-in")
-        }else if(data.errors){
-          alert("check name if it have space or special key words/mail/check password to be of length 6")
+          navigate("/sign-in");
+        } else if (data.errors) {
+          alert(data.errors);
         }
       })
       .catch((err) => console.log(err));
@@ -69,7 +69,7 @@ export default function Register() {
             <div className="label">
               <label htmlFor="name">Name</label>
             </div>
-            <div style={{marginBottom: "15px"}}>
+            <div style={{ marginBottom: "15px" }}>
               <input
                 onChange={(e) => {
                   setUserData((prevData) => ({
