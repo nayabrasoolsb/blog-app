@@ -59,6 +59,7 @@ function CreateBlog() {
       
       <div className="content">
         <h2>CreateBlog</h2>
+        <p style={{fontSize: "13px", color: "green"}}>Make sure image size is less than 100kb</p>
         <form onSubmit={(e) => submitHandler(e)}>
           <div>
             <input
