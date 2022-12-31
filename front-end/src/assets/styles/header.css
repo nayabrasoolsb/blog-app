@@ -1,0 +1,29 @@
+.header{
+  display: flex;
+  height: 55px;
+  box-shadow: 2px 2px 8px rgba(215, 239, 243, 0.8);
+  align-items: center;
+}
+.header>div{
+  margin-right: 15px;
+  height: 55px;
+  width: 90px;
+  line-height: 55px;
+}
+.header>div:first-child{
+  margin-right: auto;
+  margin-left: 15px;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  width: 140px;
+}
+.header>div:last-child{
+  background-color: cadetblue;
+  /* color: white; */
+  text-align: center;
+}
+.header>div>a{
+  text-decoration: none;
+  color:white;
+}

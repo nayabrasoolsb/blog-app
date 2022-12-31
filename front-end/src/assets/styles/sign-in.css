@@ -1,0 +1,68 @@
+.main-sign-in {
+  width: 300px;
+  margin: 0 auto;
+  padding: 15px 15px;
+  background-color: cadetblue;
+  box-shadow: 3px 3px 8px #cccc;
+}
+
+.main-sign-in h2 {
+  margin: 0;
+  margin-bottom: 7px;
+}
+
+.main-sign-in .content {
+  background-color: white;
+  padding: 15px 15px;
+}
+
+.main-sign-in input {
+  height: 28px;
+  border-radius: 2px;
+  border: 1px solid #cccc;
+  background-color: white;
+  width: 95%;
+}
+
+.main-sign-in>form>div>div {
+  margin-bottom: 20px;
+}
+
+.main-sign-in .label {
+  margin-bottom: 7px;
+}
+
+.main-sign-in>form button {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(31, 176, 176);
+  height: 28px;
+  border: 1px solid #cccc;
+  color: white;
+}
+
+.main-sign-in>form button:hover {
+  background-color: rgb(99, 132, 132);
+  transition: 0.4s ease-in;
+}
+
+.forgot-pass {
+  text-align: right;
+  font-size: 13px;
+}
+.sign-up{
+  text-align: center;
+  font-size: 15px;
+}
+.main-sign-in .border-err{
+  border: 1px solid red;
+}
+.main-sign-in .error .err{
+  color: red;
+  font-size: 12px;
+}
+.pass>div img{
+  width: 21px;
+  height: 21px;
+  /* margin-top: -4px; */
+}
