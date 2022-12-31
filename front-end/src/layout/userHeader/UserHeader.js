@@ -20,6 +20,7 @@ export default function UserHeader() {
           Hi<span> {localStorage.getItem("userName")}</span>
         </div>
         <div
+        className="log-out"
           style={{ cursor: "pointer" }}
           onClick={() => {
             localStorage.removeItem("token");
