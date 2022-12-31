@@ -10,10 +10,10 @@ export default function UserHeader() {
     <>
       <div className="header1">
         <div>Blog App</div>
-        <div>
+        <div className="home">
           <Link to="blogs/1">Home</Link>
         </div>
-        <div>
+        <div className="create1">
           <Link to="create">Create</Link>
         </div>
         <div className="user-name">

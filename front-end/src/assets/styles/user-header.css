@@ -50,3 +50,10 @@
   font-size: 17px;
   color:aliceblue
 }
+.create1, .home{
+  text-align: center;
+}
+.create1:hover, .home:hover{
+  background-color: rgb(226, 228, 231);
+  transition: 0.7s ease-in;
+}
