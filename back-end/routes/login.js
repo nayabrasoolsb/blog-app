@@ -10,7 +10,7 @@ const secret = "RESTAPI";
 // router.use(express.urlencoded())
 router.use(bodyParser.json());
 // router.use(bodyParser.urlencoded({extended:true}))
-const mongoose = require("mongoose")
+// const mongoose = require("mongoose")
 router.post(
   "/register",
   body("email").isEmail(),

@@ -8,11 +8,11 @@ const dotenv = require("dotenv").config();
 
 router.use(cors());
 router.use(bodyParser.json());
-router.use(
-  express.json({
-    limit: "50mb",
-  }),
-);
+// router.use(
+//   express.json({
+//     limit: "50mb",
+//   }),
+// );
 router.use(bodyParser.json({ limit: "50mb" }));
 router.use(bodyParser.urlencoded({ limit: "50mb", extended: false }));
 router.use(express.json());
