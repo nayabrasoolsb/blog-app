@@ -21,7 +21,6 @@ export default function Register() {
   });
   function submitHandler(e) {
     e.preventDefault();
-    // console.log("hello");
     if (!userData.email || !userData.password || !userData.confirmPassword) {
       alert("fields cannot empty");
       return;
@@ -37,10 +36,8 @@ export default function Register() {
       }));
       return;
     }
-    // alert("all good");
     fetch("http://localhost:3004/api/v1/user/register", {
       method: "POST",
-      // mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -52,7 +49,6 @@ export default function Register() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         if (data.status === "Failed") {
           alert("email already exists please try to login");
         } else if(data.status === "success") {

@@ -16,7 +16,6 @@ export default function SignIn() {
   });
   function submitHandler(e) {
     e.preventDefault();
-    // alert("hello");
     if (!userData.email || !userData.password) {
       alert("fields cannot empty");
       return;
@@ -27,7 +26,6 @@ export default function SignIn() {
     }
     fetch("http://localhost:3004/api/v1/user/login", {
       method: "POST",
-      // mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -38,15 +36,12 @@ export default function SignIn() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         if (data.status === "Failed") {
           alert("Invalid Credential please check password/email");
         } else if(data.status === "Success") {
           alert(data.message);
-          // console.log(data)
           localStorage.setItem("token", data.token);
           localStorage.setItem("userName", data.userName)
-          
           navigate("/user/blogs")
         }
       })
