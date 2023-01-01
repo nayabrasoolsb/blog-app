@@ -8,7 +8,6 @@ export default function RenderBlogs({ blog }) {
   let s = new Date(blog.createdAt).toLocaleString(undefined, {
     timeZone: "Asia/Kolkata",
   });
-  // console.log(blog)
   const [del, setDel] = useState(false);
   const date = s.split(", ")[0];
   const time = s.split(", ")[1].split(" ")[0];
@@ -25,6 +24,7 @@ export default function RenderBlogs({ blog }) {
       },
     ).then((res) => res.json());
     window.location.reload(false);
+    // navigate(`/user/blogs/${pageNum}`)
   }
   return (
     <div
