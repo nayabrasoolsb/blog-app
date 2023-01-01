@@ -3,7 +3,7 @@ import "../../assets/styles/blogs.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
-import BlogDetails from "../RenderBlog/RenderBlog";
+import RenderBlog from "../RenderBlog/RenderBlog";
 
 export default function Blogs() {
   const params = useParams();
@@ -18,13 +18,18 @@ export default function Blogs() {
     }
   }, []);
   useEffect(() => {
-    fetch(`https://blogapp-by-nayabrasool.onrender.com/api/v1/blogs/fetch/${pageNum ? pageNum : 1}`, {
-      method: "GET",
-      headers: {
-        authorization: localStorage.getItem("token"),
-        "Content-Type": "application/json",
+    fetch(
+      `https://blogapp-by-nayabrasool.onrender.com/api/v1/blogs/fetch/${
+        pageNum ? pageNum : 1
+      }`,
+      {
+        method: "GET",
+        headers: {
+          authorization: localStorage.getItem("token"),
+          "Content-Type": "application/json",
+        },
       },
-    })
+    )
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data.blogs);
@@ -53,7 +58,7 @@ export default function Blogs() {
         <div className="blogs">
           <div>
             {blogs.map((blog, index) => (
-              <BlogDetails key={index} blog={blog} />
+              <RenderBlog key={index} blog={blog} />
             ))}
           </div>
           <div className="pages">
@@ -64,9 +69,11 @@ export default function Blogs() {
             </Link>
             <div className="page-num">{pageNum ? pageNum : 1} </div>
             {/* <div className="box"> */}
-              <Link className="box" to={`/user/blogs/${pageNum ? parseInt(pageNum) + 1 : 1}`}>
-                next{`>`}
-              </Link>
+            <Link
+              className="box"
+              to={`/user/blogs/${pageNum ? parseInt(pageNum) + 1 : 1}`}>
+              next{`>`}
+            </Link>
             {/* </div> */}
           </div>
         </div>

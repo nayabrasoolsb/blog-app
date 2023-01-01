@@ -35,3 +35,11 @@
 .blog-main .blog-title>.userName>span{
   text-transform: lowercase
 }
+.blog-main >.del{
+  width: 25px;
+  height: 25px;
+}
+.blog-main>.del>img{
+  width: 100%;
+  margin-left: 15px;
+}

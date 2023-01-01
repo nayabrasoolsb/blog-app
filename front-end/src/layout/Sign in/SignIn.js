@@ -119,7 +119,7 @@ export default function SignIn() {
               <span>
                 <img
                   onClick={() => setShowPass(!showPass)}
-                  src="padlock.png"
+                  src="/padlock.png"
                   alt="lock img"
                 />
               </span>
