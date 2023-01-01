@@ -1,14 +1,14 @@
 import "../../assets/styles/render-blog.css";
 
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
-import React from "react";
+import { Link } from "react-router-dom";
 
-export default function RenderBlogs({ blog, pageNum }) {
+export default function RenderBlogs({ blog }) {
   let s = new Date(blog.createdAt).toLocaleString(undefined, {
     timeZone: "Asia/Kolkata",
   });
-  const navigate = useNavigate();
+  const [refresh, setRefresh] = useState(false);
   const date = s.split(", ")[0];
   const time = s.split(", ")[1].split(" ")[0];
   const meredian = s.split(", ")[1].split(" ")[1].toUpperCase();
@@ -23,8 +23,7 @@ export default function RenderBlogs({ blog, pageNum }) {
         },
       },
     ).then((res) => res.json());
-    window.location.reload(false);
-    navigate(`/user/blogs/${pageNum}`)
+      setRefresh(!refresh);
   }
   return (
     <div className="blog-main">
