@@ -36,9 +36,9 @@ export default function Blogs() {
         setBlogs(data.blogs);
       })
       .catch((err) => console.log(err));
-  }, [pageNum]);
+  }, [pageNum, refresh]);
   function change(){
-    setRefresh(!refresh)
+    setRefresh(!refresh);
   }
   return (
     <div className="blogs-main">
