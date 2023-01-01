@@ -58,7 +58,7 @@ export default function Blogs() {
         <div className="blogs">
           <div>
             {blogs.map((blog, index) => (
-              <RenderBlog key={index} blog={blog} />
+              <RenderBlog pageNum={pageNum} key={index} blog={blog} />
             ))}
           </div>
           <div className="pages">

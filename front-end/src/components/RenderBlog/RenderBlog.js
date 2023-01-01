@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import React from "react";
 
-export default function RenderBlogs({ blog }) {
+export default function RenderBlogs({ blog, pageNum }) {
   let s = new Date(blog.createdAt).toLocaleString(undefined, {
     timeZone: "Asia/Kolkata",
   });
