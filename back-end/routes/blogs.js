@@ -95,13 +95,10 @@ router.delete("/delete/:id", async (req, res) => {
     const blogs = await Blogs.findOneAndDelete({ _id: id });
     res.json({
       status: "success",
-      blogs,
     });
   } catch (error) {
-    console.log(error)
     res.json({
       status: "Failed",
-      test: "test",
       message: error.message,
     });
   }
