@@ -1,14 +1,12 @@
 import "../../assets/styles/render-blog.css";
 
-import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
+import React from "react";
 
 export default function RenderBlogs({ blog }) {
   let s = new Date(blog.createdAt).toLocaleString(undefined, {
     timeZone: "Asia/Kolkata",
   });
-  const [del, setDel] = useState(false);
   const date = s.split(", ")[0];
   const time = s.split(", ")[1].split(" ")[0];
   const meredian = s.split(", ")[1].split(" ")[1].toUpperCase();
@@ -27,10 +25,7 @@ export default function RenderBlogs({ blog }) {
     // navigate(`/user/blogs/${pageNum}`)
   }
   return (
-    <div
-      className="blog-main"
-      onMouseOver={() => setDel(true)}
-      onMouseLeave={() => setDel(false)}>
+    <div className="blog-main">
       <div>
         <img src={blog.imageUrl.imageUrl} alt="blog-img" />
       </div>
@@ -47,11 +42,10 @@ export default function RenderBlogs({ blog }) {
         </div>
         <div>{blog.description} </div>
       </div>
-      {del && (
-        <div className="del">
-          <img onClick={delBlog} src="/delete.png" alt="delete icon" />
-        </div>
-      )}
+
+      <div className="del">
+        <img onClick={delBlog} src="/delete.png" alt="delete icon" />
+      </div>
     </div>
   );
 }
