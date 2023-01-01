@@ -39,7 +39,7 @@ router.get("/fetch/:pageNum", async (req, res) => {
 router.get("/fetch/blog/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const blogs = await Blogs.find({ _id: id, user:req.user })
+    const blogs = await Blogs.find({ _id: id, user: req.user });
     res.json({
       status: "success",
       blogs,
@@ -59,7 +59,6 @@ router.post("/upload", async (req, res) => {
       { upload_preset: "ml_default" },
       function (error, result) {
         if (error) {
-          // console.log(error, "Connot upload");
           res.sendStatus(500);
         } //else console.log(result);
         return { url: result.secure_url, public_id: result.public_id };
@@ -85,6 +84,24 @@ router.post("/upload", async (req, res) => {
   } catch (error) {
     res.json({
       status: "Failed",
+      message: error.message,
+    });
+  }
+});
+
+router.delete("/delete/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const blogs = await Blogs.findOneAndDelete({ _id: id });
+    res.json({
+      status: "success",
+      blogs,
+    });
+  } catch (error) {
+    console.log(error)
+    res.json({
+      status: "Failed",
+      test: "test",
       message: error.message,
     });
   }
