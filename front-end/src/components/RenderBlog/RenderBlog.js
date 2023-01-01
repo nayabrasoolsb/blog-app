@@ -23,7 +23,7 @@ export default function RenderBlogs({ blog, pageNum }) {
         },
       },
     ).then((res) => res.json());
-    // window.location.reload(false);
+    window.location.reload(false);
     navigate(`/user/blogs/${pageNum}`)
   }
   return (
