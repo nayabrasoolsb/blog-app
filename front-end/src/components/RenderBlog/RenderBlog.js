@@ -4,11 +4,10 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-export default function RenderBlogs({ blog }) {
+export default function RenderBlogs({ blog, change }) {
   let s = new Date(blog.createdAt).toLocaleString(undefined, {
     timeZone: "Asia/Kolkata",
   });
-  const [refresh, setRefresh] = useState(false);
   const date = s.split(", ")[0];
   const time = s.split(", ")[1].split(" ")[0];
   const meredian = s.split(", ")[1].split(" ")[1].toUpperCase();
@@ -23,7 +22,7 @@ export default function RenderBlogs({ blog }) {
         },
       },
     ).then((res) => res.json());
-      setRefresh(!refresh);
+    change()
   }
   return (
     <div className="blog-main">

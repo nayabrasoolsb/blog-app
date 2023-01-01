@@ -7,6 +7,7 @@ import RenderBlog from "../RenderBlog/RenderBlog";
 
 export default function Blogs() {
   const params = useParams();
+  const [refresh, setRefresh] = useState(false);
   let { pageNum } = params;
   pageNum = pageNum && pageNum > 1 ? pageNum : 1;
   const navigate = useNavigate();
@@ -36,6 +37,9 @@ export default function Blogs() {
       })
       .catch((err) => console.log(err));
   }, [pageNum]);
+  function change(){
+    setRefresh(!refresh)
+  }
   return (
     <div className="blogs-main">
       {!blogs.length && pageNum === 1 ? (
@@ -58,7 +62,7 @@ export default function Blogs() {
         <div className="blogs">
           <div>
             {blogs.map((blog, index) => (
-              <RenderBlog key={index} blog={blog} />
+              <RenderBlog change={change} key={index} blog={blog} />
             ))}
           </div>
           <div className="pages">
