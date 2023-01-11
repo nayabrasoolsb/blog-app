@@ -27,3 +27,22 @@
   text-decoration: none;
   color:white;
 }
+@media (max-width: 600px) {
+  .header>div:first-child{
+    font-size: 20px;
+    letter-spacing: normal;
+  }
+  .header>div{
+    margin-right: 10px;
+  }
+}
+@media(max-width: 365px){
+  .header>div{
+    margin-right: 6px;
+    font-size: 15px;
+  }
+  .header>div:first-child{
+    font-size: 18px;
+    letter-spacing:normal;
+  }
+}

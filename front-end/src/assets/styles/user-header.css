@@ -67,3 +67,22 @@
   transition: 0.7s ease-in;
   background-color: rgb(83, 130, 133);
 }
+@media (max-width: 600px) {
+  .header1>div:first-child{
+    font-size: 20px;
+    letter-spacing: normal;
+  }
+  .header1>div{
+    margin-right: 10px;
+  }
+}
+@media(max-width: 365px){
+  .header1>div{
+    margin-right: 6px;
+    font-size: 15px;
+  }
+  .header1>div:first-child{
+    font-size: 18px;
+    letter-spacing:normal;
+  }
+}
