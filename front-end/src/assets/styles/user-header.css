@@ -60,11 +60,11 @@
 .create1:hover,
 .home:hover {
   background-color: rgb(226, 228, 231);
-  transition: 0.7s ease-in;
+  transition: 0.4s ease-in;
 }
 
 .log-out:hover {
-  transition: 0.7s ease-in;
+  transition: 0.4s ease-in;
   background-color: rgb(83, 130, 133);
 }
 @media (max-width: 600px) {
