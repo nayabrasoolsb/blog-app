@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 export default function SignIn() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -14,7 +14,8 @@ export default function SignIn() {
     email: "",
     password: "",
   });
-  function submitHandler(e) {
+  const [loading, setLoading] = useState(false);
+  async function submitHandler(e) {
     e.preventDefault();
     if (!userData.email || !userData.password) {
       alert("fields cannot empty");
@@ -24,28 +25,33 @@ export default function SignIn() {
       alert("please check the error");
       return;
     }
-    fetch("https://blogapp-by-nayabrasool.onrender.com/api/v1/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    setLoading(true);
+    await fetch(
+      "https://blogapp-by-nayabrasool.onrender.com/api/v1/user/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: userData.email,
+          password: userData.password,
+        }),
       },
-      body: JSON.stringify({
-        email: userData.email,
-        password: userData.password,
-      }),
-    })
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "Failed") {
           alert("Invalid Credential please check password/email");
-        } else if(data.status === "Success") {
+        } else if (data.status === "Success") {
           alert(data.message);
           localStorage.setItem("token", data.token);
-          localStorage.setItem("userName", data.userName)
-          navigate("/user/blogs")
+          localStorage.setItem("userName", data.userName);
+          navigate("/user/blogs");
         }
       })
       .catch((err) => console.log(err));
+    setLoading(false);
   }
   return (
     <div className="main-sign-in">
@@ -126,8 +132,15 @@ export default function SignIn() {
               {err.password && <div className="err"> {err.password}</div>}
             </div>
           </div>
-          <div>
+          <div style={{marginBottom: "5px"}}>
             <button type="submit">Log In</button>
+            {loading && (
+              <div className="loading-login">
+                <div>
+                  <img src="/loading-img.jpg" alt="loading img" />
+                </div>
+              </div>
+            )}
           </div>
           <div className="forgot-pass">Forgot Password?</div>
           <div className="sign-up">

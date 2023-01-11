@@ -66,3 +66,25 @@
   height: 21px;
   /* margin-top: -4px; */
 }
+.loading-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-login>div>img {
+  width: 30px;
+  height: auto;
+  animation: rotation 3s infinite linear;
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(359deg)
+  }
+}
+

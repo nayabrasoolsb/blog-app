@@ -1,10 +1,10 @@
 import "../../assets/styles/render-blog.css";
 
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 
 import { Link } from "react-router-dom";
 
-export default function RenderBlogs({ blog, change }) {
+function RenderBlogs({ blog, change }) {
   let s = new Date(blog.createdAt).toLocaleString(undefined, {
     timeZone: "Asia/Kolkata",
   });
@@ -24,6 +24,7 @@ export default function RenderBlogs({ blog, change }) {
     ).then((res) => res.json());
     change()
   }
+  
   return (
     <div className="blog-main">
       <div>
@@ -49,3 +50,4 @@ export default function RenderBlogs({ blog, change }) {
     </div>
   );
 }
+export default memo(RenderBlogs)

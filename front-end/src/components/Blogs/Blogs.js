@@ -1,44 +1,60 @@
 import "../../assets/styles/blogs.css";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import RenderBlog from "../RenderBlog/RenderBlog";
 
 export default function Blogs() {
-  const params = useParams();
-  const [refresh, setRefresh] = useState(false);
-  let { pageNum } = params;
-  pageNum = pageNum && pageNum > 1 ? pageNum : 1;
-  const navigate = useNavigate();
-  const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     if (!localStorage.getItem("token")) {
       navigate("/");
       return;
     }
   }, []);
+
+  const params = useParams();
+  const [refresh, setRefresh] = useState(false);
+  let { pageNum } = params;
+  pageNum = pageNum && pageNum > 1 ? pageNum : 1;
+  const navigate = useNavigate();
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
-    fetch(
-      `https://blogapp-by-nayabrasool.onrender.com/api/v1/blogs/fetch/${
-        pageNum ? pageNum : 1
-      }`,
-      {
-        method: "GET",
-        headers: {
-          authorization: localStorage.getItem("token"),
-          "Content-Type": "application/json",
+    const fetchBlogs = async () => {
+      setLoading(true);
+      await fetch(
+        `https://blogapp-by-nayabrasool.onrender.com/api/v1/blogs/fetch/${
+          pageNum ? pageNum : 1
+        }`,
+        {
+          method: "GET",
+          headers: {
+            authorization: localStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
         },
-      },
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setBlogs(data.blogs);
-      })
-      .catch((err) => console.log(err));
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setBlogs(data.blogs);
+        })
+        .catch((err) => console.log(err));
+      setLoading(false);
+    };
+    fetchBlogs();
   }, [pageNum, refresh]);
-  function change(){
+  const change =  useCallback(() =>{
     setRefresh(!refresh);
+  },[refresh])
+  if(loading){
+    return <div className="loading">
+      <div>
+        <img src="/loading-img.jpg" alt="loading img" />
+        <p>loading data, please wait...</p>
+      </div>
+    </div>
   }
   return (
     <div className="blogs-main">

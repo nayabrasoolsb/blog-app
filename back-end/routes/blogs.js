@@ -3,28 +3,18 @@ const bodyParser = require("body-parser");
 const router = express.Router();
 const Blogs = require("../models/blog.js");
 const cloudinary = require("../cloudinary/cloudinary");
-const cors = require("cors");
+// const cors = require("cors");
 const dotenv = require("dotenv").config();
 
-router.use(cors());
 router.use(bodyParser.json());
-// router.use(
-//   express.json({
-//     limit: "50mb",
-//   }),
-// );
-router.use(bodyParser.json({ limit: "50mb" }));
-router.use(bodyParser.urlencoded({ limit: "50mb", extended: false }));
-router.use(express.json());
 
 router.get("/fetch/:pageNum", async (req, res) => {
   try {
     const { pageNum } = req.params;
     const blogs = await Blogs.find({ user: req.user })
-      .skip(pageNum > 0 && pageNum ? (pageNum - 1) * 3 : 0)
-      .limit(3)
       .sort({ _id: -1 })
-      .populate("user");
+      .skip(pageNum > 0 ? (pageNum - 1) * 3 : 0)
+      .limit(3);
     res.json({
       status: "success",
       blogs,

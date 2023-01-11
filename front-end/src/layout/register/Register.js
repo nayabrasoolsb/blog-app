@@ -13,13 +13,14 @@ export default function Register() {
   });
   const [showPass, setShowPass] = useState(false);
   const [showConfPass, setShowConPass] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [err, setErr] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
-  function submitHandler(e) {
+  async function submitHandler(e) {
     e.preventDefault();
     if (!userData.email || !userData.password || !userData.confirmPassword) {
       alert("fields cannot empty");
@@ -36,7 +37,8 @@ export default function Register() {
       }));
       return;
     }
-    fetch("https://blogapp-by-nayabrasool.onrender.com/api/v1/user/register", {
+    setLoading(true);
+    await fetch("https://blogapp-by-nayabrasool.onrender.com/api/v1/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,6 +62,7 @@ export default function Register() {
         }
       })
       .catch((err) => console.log(err));
+    setLoading(false);
   }
   return (
     <div className="main-sign-in">
@@ -216,8 +219,15 @@ export default function Register() {
               )}
             </div>
           </div>
-          <div>
+          <div style={{marginBottom: "5px"}}>
             <button type="submit">Sign Up</button>
+            {loading && (
+              <div className="loading-login">
+                <div>
+                  <img src="/loading-img.jpg" alt="loading img" />
+                </div>
+              </div>
+            )}
           </div>
           <div className="forgot-pass">Forgot Password?</div>
           <div className="sign-up">

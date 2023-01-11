@@ -1,4 +1,4 @@
-.blogs-main> .no-blogs{
+.blogs-main>.no-blogs {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,10 +6,12 @@
   padding: 20px 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.blogs-main> .no-blogs .create-one{
+
+.blogs-main>.no-blogs .create-one {
   margin-top: 20px;
 }
-.blogs-main> .no-blogs .create-one>a{
+
+.blogs-main>.no-blogs .create-one>a {
   background-color: cadetblue;
   width: 150px;
   height: 35px;
@@ -21,12 +23,14 @@
   border-radius: 2px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.pages{
+
+.pages {
   display: flex;
   width: 250px;
   margin: 10px auto;
 }
- .box{
+
+.box {
   margin: 5px;
   padding: 5px 7px;
   border: 2px solid rgb(104, 104, 228);
@@ -38,7 +42,8 @@
   border-radius: 2px;
   /* box-sizing: border-box; */
 }
-.pages>.page-num{
+
+.pages>.page-num {
   height: 44px;
   width: 44px;
   line-height: 44px;
@@ -46,14 +51,45 @@
   font-size: 18px;
   margin: 0 10px;
 }
-.blogs>.pages>.none{
-  display:none;
+
+.blogs>.pages>.none {
+  display: none;
 }
-.the-end{
+
+.the-end {
   max-width: 250px;
   margin: 10px auto;
 }
-.box>a{
+
+.box>a {
   text-decoration: none;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading>div{
+  margin-top: 50px;
+}
+.loading>div>img {
+  max-width: 230px;
+  height: auto;
+  animation: rotation 3s infinite linear;
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(359deg)
+  }
+}
+.loading>div>p{
+  text-align: center;
+}
