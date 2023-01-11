@@ -2,11 +2,12 @@
   display: flex;
   min-width: 200px;
   max-width: 500px;
-  margin: 20px auto;
   padding: 15px 20px;
   border: 1px solid #cccc;
   box-shadow: 3px 3px 8px #cccc;
   height: 160px;
+  margin: 20px auto;
+  /* position: absolute; */
 }
 
 .blog-main>div {
@@ -43,4 +44,9 @@
 }
 .blog-main>.del>img{
   width: 100%;
+}
+.confirm{
+  position: relative;
+  top: 0;
+  left: 0;
 }

@@ -52,7 +52,7 @@ export default function Blogs() {
     return <div className="loading">
       <div>
         <img src="/loading-img.jpg" alt="loading img" />
-        <p>loading data, please wait...</p>
+        <h3 className="text">Loading data, please wait...</h3>
       </div>
     </div>
   }

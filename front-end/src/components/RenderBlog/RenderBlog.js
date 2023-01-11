@@ -22,32 +22,34 @@ function RenderBlogs({ blog, change }) {
         },
       },
     ).then((res) => res.json());
-    change()
+    change();
   }
-  
+
   return (
-    <div className="blog-main">
-      <div>
-        <img src={blog.imageUrl.imageUrl} alt="blog-img" />
-      </div>
-      <div>
-        <div className="blog-title">
-          <Link to={`/user/blog/${blog._id}`}>
-            <h3>{blog.title}</h3>
-          </Link>
-
-          <div className="userName">
-            by <span>{localStorage.getItem("userName")}</span> {date} {time}{" "}
-            {meredian}
-          </div>
+    <>
+      <div className="blog-main">
+        <div>
+          <img src={blog.imageUrl.imageUrl} alt="blog-img" />
         </div>
-        <div>{blog.description} </div>
-      </div>
+        <div>
+          <div className="blog-title">
+            <Link to={`/user/blog/${blog._id}`}>
+              <h3>{blog.title}</h3>
+            </Link>
 
-      <div className="del">
-        <img onClick={delBlog} src="/delete.png" alt="delete icon" />
+            <div className="userName">
+              by <span>{localStorage.getItem("userName")}</span> {date} {time}{" "}
+              {meredian}
+            </div>
+          </div>
+          <div>{blog.description} </div>
+        </div>
+
+        <div className="del">
+          <img onClick={delBlog} src="/delete.png" alt="delete icon" />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
-export default memo(RenderBlogs)
+export default memo(RenderBlogs);

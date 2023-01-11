@@ -90,6 +90,6 @@
     transform: rotate(359deg)
   }
 }
-.loading>div>p{
+.loading>div>.text{
   text-align: center;
 }

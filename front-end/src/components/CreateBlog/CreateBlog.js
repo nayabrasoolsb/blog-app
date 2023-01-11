@@ -65,7 +65,7 @@ function CreateBlog() {
       <div className="loading">
         <div>
           <img src="/loading-img.jpg" alt="loading img" />
-          <p>loading please wait...</p>
+          <h3 className="text">Loading please wait...</h3>
         </div>
       </div>
     );
