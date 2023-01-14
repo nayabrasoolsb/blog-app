@@ -3,6 +3,8 @@
   height: 55px;
   box-shadow: 2px 2px 8px rgba(215, 239, 243, 0.8);
   align-items: center;
+  background-color: #eeeeee;
+
 }
 
 .header1>div {
@@ -67,22 +69,26 @@
   transition: 0.4s ease-in;
   background-color: rgb(83, 130, 133);
 }
+
 @media (max-width: 600px) {
-  .header1>div:first-child{
+  .header1>div:first-child {
     font-size: 20px;
     letter-spacing: normal;
   }
-  .header1>div{
+
+  .header1>div {
     margin-right: 10px;
   }
 }
-@media(max-width: 365px){
-  .header1>div{
+
+@media(max-width: 365px) {
+  .header1>div {
     margin-right: 6px;
     font-size: 15px;
   }
-  .header1>div:first-child{
+
+  .header1>div:first-child {
     font-size: 18px;
-    letter-spacing:normal;
+    letter-spacing: normal;
   }
 }

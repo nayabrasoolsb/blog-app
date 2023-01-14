@@ -3,6 +3,7 @@
   height: 55px;
   box-shadow: 2px 2px 8px rgba(215, 239, 243, 0.8);
   align-items: center;
+  background-color: #eeeeee;
 }
 .header>div{
   margin-right: 15px;
