@@ -57,7 +57,7 @@ export default function Register() {
           alert("registration successful");
           navigate("/sign-in");
         } else if (data.errors) {
-          alert("name cannot have spaces or special key words");
+          alert("please check your email");
           // console.log()
         }
       })
