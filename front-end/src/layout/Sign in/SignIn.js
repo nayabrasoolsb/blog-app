@@ -133,15 +133,17 @@ export default function SignIn() {
             </div>
           </div>
           <div style={{ marginBottom: "5px" }}>
+            {loading && (
+              <div className="loading-login">
+                <img
+                  className="loading-login1"
+                  src="/loading-img.jpg"
+                  alt="loading img"
+                />
+              </div>
+            )}
             <button type="submit">
-              {loading && (
-                <div className="loading-login">
-                  <div>
-                    <img src="/loading-img.jpg" alt="loading img" />
-                  </div>
-                </div>
-              )}
-              Log In
+              <span>Log In</span>
             </button>
           </div>
           <div className="forgot-pass">Forgot Password?</div>

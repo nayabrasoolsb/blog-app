@@ -38,17 +38,20 @@ export default function Register() {
       return;
     }
     setLoading(true);
-    await fetch("https://blogapp-by-nayabrasool.onrender.com/api/v1/user/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    await fetch(
+      "https://blogapp-by-nayabrasool.onrender.com/api/v1/user/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: userData.email,
+          password: userData.password,
+          name: userData.name,
+        }),
       },
-      body: JSON.stringify({
-        email: userData.email,
-        password: userData.password,
-        name: userData.name,
-      }),
-    })
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "Failed") {
@@ -219,15 +222,17 @@ export default function Register() {
               )}
             </div>
           </div>
-          <div style={{marginBottom: "5px"}}>
-            <button type="submit">Sign Up</button>
+          <div style={{ marginBottom: "5px" }}>
             {loading && (
               <div className="loading-login">
-                <div>
-                  <img src="/loading-img.jpg" alt="loading img" />
-                </div>
+                <img
+                  className="loading-login1"
+                  src="/loading-img.jpg"
+                  alt="loading img"
+                />
               </div>
             )}
+            <button type="submit">Sign Up</button>
           </div>
           <div className="forgot-pass">Forgot Password?</div>
           <div className="sign-up">

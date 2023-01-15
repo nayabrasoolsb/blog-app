@@ -67,12 +67,11 @@
   /* margin-top: -4px; */
 }
 .loading-login{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 25px;
+  margin: 0 auto;
 }
-.loading-login>div>img {
-  width: 30px;
+.loading-login>img {
+  width: 25px;
   height: auto;
   animation: rotation 3s infinite linear;
   border-radius: 50%;
