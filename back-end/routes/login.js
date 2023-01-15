@@ -14,7 +14,6 @@ router.use(bodyParser.json());
 router.post(
   "/register",
   body("email").isEmail(),
-  body("name").isAlpha(),
   body("password").isLength({ min: 6, max: 16 }),
   async (req, res) => {
     try {
