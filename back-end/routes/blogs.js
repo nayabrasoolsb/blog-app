@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const router = express.Router();
 const Blogs = require("../models/blog.js");
 const cloudinary = require("../cloudinary/cloudinary");
-// const cors = require("cors");
 const dotenv = require("dotenv").config();
 
 router.use(bodyParser.json());
